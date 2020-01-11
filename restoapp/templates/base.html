@@ -1,0 +1,28 @@
+{%load boostrap4%}
+{% load static%}
+<!Doctype html>
+<html leng="en">
+    <head>
+        <meta charset="utf-8" initial-scale="1.0">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-compatible" content="ie=edge">
+        <title>
+            Restorent listing App
+        </title>
+        {% block styles%}
+        {% boostrap_css%}
+        <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+        <link href="https:// fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+   {% endblock%}
+    </head>
+<body>
+    {% include "navbar.html"%}
+    {% block content%}
+    {%endblock%}
+    {% block scripts%}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% boostrap_javascript %}
+    {% block scripts%}
+    {% endblock%}
+</body>
+</html>
