@@ -2,6 +2,22 @@
 {% block content%}
 <div class="container">
     <div class="row">
-        <div class=" col"
+        <div class=" col-md-12 d-flex justify-content-center mb-5">
+            <button> <a href="{% url 'locations'%}">Location</a></button>
+            {% for restora in locations%}
+            {% if locations%}
+
+            <h2>{{message}}</h2>
+            <img src="{{restora.image.url" alt="Resto_image" class="img-fluid">
+
+            {% else %}
+            <h2
+            >ooooh that restorent does not exist on the network! try another restaurent</h2>
+            <strong style="color: blue;">{{message}}</strong>
+            {%endif%}
+            {%endfor%}
+
+        </div>
     </div>
 </div>
+{%endblock%}
