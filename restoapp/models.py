@@ -14,10 +14,12 @@ class Location(models.Model):
     
     def updateLocation(self, **kwargs):
         self.objects.filter(id= self.pk).update(**kwargs)
+
 class Restorent(models.Model):
     restorent=models.CharField(max_length=30)
     name= models.CharField(max_length=20)
     details= models.CharField(max_length=60)
+    restorentImg=models.ImageField(upload_to='locations', null=True)
     location= models.ForeignKey('Location', on_delete=models.CASCADE,null='True', blank=True)
 
     def __str__(self):
@@ -37,8 +39,12 @@ class Restorent(models.Model):
        return restos
     @classmethod
     def restorent_location(cls):
-        restos = cls.objects.get(id=id)
-        return restos
+       restos=cls.objects.order_by('location')
+       return restos
+    @classmethod
+    def get_resto(cls,id):
+       resto = cls.objects.get(id=id)
+       return resto
     @classmethod
     def search_resto(cls,search_term):
         locations= cls.objects.filter(location__name__icontains=search_term)
@@ -46,4 +52,4 @@ class Restorent(models.Model):
 
     class Meta:
         ordering = ['name']
-class details(models.Model):
+

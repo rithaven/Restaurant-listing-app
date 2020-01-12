@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<div class="container" style="margin-top: 70px;">
+    {% for restora in restaurent%}
+    <div class="modal fade" id="{{restora.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="exampleModalCenterTitle"><strong>Restorent :{{restora.name}}</strong></h5>
+                    <button type="button" class="close" data-dismis="modal" aria-label="close"></button>
+                    <span aria-hidden="true">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <img src="{{restora.image.url}}" alt="{{restora.name}}" class="img-fluidmyimage">
+                    <p><strong>Restorent Details: </strong>{{restora.details}} </strong></p>
+                    <p><strong>Restorent Location: </strong>{{restora.location}} </strong></p>
+                    
+   
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor%}
+{% endblock%}

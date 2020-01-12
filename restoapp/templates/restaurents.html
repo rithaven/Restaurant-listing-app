@@ -2,8 +2,18 @@
 {% block content%}
 
 <div class="container" style="margin-top: 70px;">
-    {% for restora in restaurent%}
-    <div class="modal fade" id="{{phot.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="row">
+        <div class="col-md-12 d-flex justify-content-center mb-5">
+            <button><a href="{% url 'locations'%}">Resto locations</a></button>
+        </div>
+    </div>
+    {% for resto in restorent%}
+    <span style="padding: 100px;">
+    <img src="{{resto.restorentImg.url}}" class="img-fluidmyimage" data-toggle="modal" data-target="#restora.id">
+    </span>
+    {%endfor%}
+    {% for resto in restorent%}
+    <div class="modal fade" id="{{restora.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -13,7 +23,7 @@
                     <span aria-hidden="true">&times;</span>
                 </div>
                 <div class="modal-body">
-                    <img src="{{restora.image.url}}" alt="{{restora.name}}" class="img-fluidmyimage">
+                    <img src="{{restora.restorentImg.url.url}}" alt="{{restora.name}}" class="img-fluidmyimage">
                     <p><strong>Restorent Details: </strong>{{restora.details}} </strong></p>
                     <p><strong>Restorent Location: </strong>{{restora.location}} </strong></p>
                     

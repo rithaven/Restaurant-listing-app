@@ -63,7 +63,7 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#">Home</a>
+                    <a href="{% url 'resto'%}">Home</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
@@ -75,11 +75,16 @@
                     <a href="#">About</a>
                 </li>
             </ul>
-                    <from class="search" role="search" action="{% url 'search_resto'%}">
-                        
+            <div>
+                    <form class="search" role="search" action="{% url 'search_resto'%}" name="image">
+                        <div class="input-group">
                             <input class="form-control mr-sm-2" type="search" placeholder="search restaurent location" aria-label="search">
-                     <button>Search</button>
-                    </from>
+                            <div class="input-group-btn">
+                            <button type="submit" >Search</button>
+                            </div>
+                        </div>
+                    </form>
+            </div>
         </nav>
     </body>
 </html>
