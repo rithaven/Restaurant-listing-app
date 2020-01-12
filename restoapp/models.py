@@ -14,12 +14,11 @@ class Location(models.Model):
     
     def updateLocation(self, **kwargs):
         self.objects.filter(id= self.pk).update(**kwargs)
-        
 class Restorent(models.Model):
-    restorent= models.RestorentField(upload_to = 'locations/', null = True)
-    name=models.Charfield(max_length=20)
-    details=models.Charfield(max_length=60)
-    location=models.Foreignkey('Location', on_delete=models.CASCADE,null='True', blank=True)
+    restorent=models.CharField(max_length=30)
+    name= models.CharField(max_length=20)
+    details= models.CharField(max_length=60)
+    location= models.ForeignKey('Location', on_delete=models.CASCADE,null='True', blank=True)
 
     def __str__(self):
         return self.name
@@ -47,3 +46,4 @@ class Restorent(models.Model):
 
     class Meta:
         ordering = ['name']
+class details(models.Model):

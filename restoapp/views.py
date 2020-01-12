@@ -3,8 +3,8 @@ from django.http import HttpResponse,Http404
 from .models import Restorent
 # Create your views here.
 def resto(request):
-    restaurent=Resto.restaurent()
-    return render (request, 'restaurents.html',{"restaurent":restaurent})
+    restorent=Restorent.restorent()
+    return render (request, 'restaurents.html',{"restorent":restorent})
 def search_resto(request):
     if 'restorent' in request.GET and request.GET["restorent"]:
         search_term= request.GET.get("restorent")
@@ -17,6 +17,6 @@ def search_resto(request):
         return render(request,'serach.html',{"message": message})
 
 def resto_location(request):
-    restos=restaurent.restorent_location()
+    restos=Restorent.restorent_location()
     return render(request,'location.html',{"restos":restos})
     

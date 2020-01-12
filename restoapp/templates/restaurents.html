@@ -1,12 +1,7 @@
 {% extends 'base.html'%}
 {% block content%}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 d-flex justify-content-center mb-5">
-            <button><a href="{% url 'locations'%}">resto_location</a></button>
-        </div>
-    </div>
+<div class="container" style="margin-top: 70px;">
     {% for restora in restaurent%}
     <div class="modal fade" id="{{phot.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

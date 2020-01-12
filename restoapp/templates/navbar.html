@@ -1,34 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <body>
-        <nav class="navbar navbar-dark primary-color">
-            <a class="navbar-brand" href="#">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item activate">
-                        <a class="nav-link" href="#">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">booooo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <from class="form-inline" role="search" action="{% url 'search_resto'%}">
-                        <div class="md-form my-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="search restaurent location" aria-label="search">
+    <style>
+    body{
+        background-color: white;
+        margin: 0px;
+        padding: 0px;
+    }
+    .menu{
+        width: 100%;
+        background: #142b47;
+        overflow: auto;
+    }
+    .menu ul{
+        margin: 0px;
+        padding: 0px;
+        list-style:none;
+        line-height: 60px;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu ul li a{
+        background: #142b47;
+        text-decoration: none;
+        width: 130px;
+        text-align: center;
+        color: white;
+        font-size: 15px;
+        font-family: verdana;
+        display: block;
+    }
+    .menu li a:hover{
+     font-size: 33px;
+     color: 3px;
+     opacity: 3px;
+    }
+    .search{
+        margin-top:19px;
+        margin-right: 19px;
+        padding: 0px;
+        float:right;
+        text-align: center;
 
-                        </div>
+    }
+    button{
+        float: right;
+        cursor:pointer;
+        background: orange;
+        border-radius: 0px,5px,5px,0px;
+        font-family: sans-serif;
+        border:none;
+        padding: 3px;
+    }
+    </style>
+     </head>
+    <body>
+        
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="#">Gallery</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+            </ul>
+                    <from class="search" role="search" action="{% url 'search_resto'%}">
+                        
+                            <input class="form-control mr-sm-2" type="search" placeholder="search restaurent location" aria-label="search">
+                     <button>Search</button>
                     </from>
-                </ul>
-            </div>
         </nav>
     </body>
 </html>
