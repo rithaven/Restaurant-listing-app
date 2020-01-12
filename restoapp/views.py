@@ -1,7 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse,Http404
 from .models import Restorent
+import requests
 # Create your views here.
+# def home(request):
+#     response=requests.get('https://developers.zomato.com/documentation')
+#     data=response.json()
+#     return render(request,'home.html',{
+#         'ip':data['ip'],
+#         'location':data['location'],
+#         'best_rated_restaurants':data['best_rated_restaurants'],
+#         'popularity':data['popularity']
+#     })
 def resto(request):
     restorent=Restorent.restorent()
     return render (request, 'restaurents.html',{"restorent":restorent})

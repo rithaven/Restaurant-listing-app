@@ -19,8 +19,8 @@ class Restorent(models.Model):
     restorent=models.CharField(max_length=30)
     name= models.CharField(max_length=20)
     details= models.CharField(max_length=60)
-    restorentImg=models.ImageField(upload_to='locations', null=True)
-    location= models.ForeignKey('Location', on_delete=models.CASCADE,null='True', blank=True)
+    restorentImg=models.ImageField(upload_to='locations/', null=True)
+    location= models.ForeignKey('Location', on_delete=models.CASCADE, null='True', blank=True)
 
     def __str__(self):
         return self.name
